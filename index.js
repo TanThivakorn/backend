@@ -19,19 +19,19 @@ app.post("/test/timestamp", async (req, res) => {
   const currentDateTime = new Date().toLocaleString("en-US", options);
   console.log("22222");
 
-  const client = new MongoClient(databaseUrl);
+  const client = new MongoClient.connect(databaseUrl);
   console.log("database url =>" + databaseUrl);
 
-  await client.connect();
-  console.log("44444");
+  // await client.connect();
+  console.log("clinet =>" + client);
 
   await client.db("foryouonly").collection("timestamp").insertOne({
     time_stamp: currentDateTime,
   });
-  console.log("55555");
+  console.log("33333");
 
   await client.close();
-  console.log("66666");
+  console.log("44444");
   return res.status(200).send({
     status: "ok",
   });
