@@ -20,7 +20,7 @@ app.post("/test/timestamp", async (req, res) => {
   console.log("22222");
 
   const client = new MongoClient(databaseUrl);
-  console.log("33333");
+  console.log("database url =>" + databaseUrl);
 
   await client.connect();
   console.log("44444");
