@@ -23,7 +23,7 @@ app.post("/test/timestamp", async (req, res) => {
     time_stamp: currentDateTime,
   });
   await client.close();
-  res.status(200).send({
+  return res.status(200).send({
     status: "ok",
   });
 });
