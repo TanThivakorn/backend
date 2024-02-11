@@ -19,7 +19,7 @@ app.post("/test/timestamp", async (req, res) => {
   const currentDateTime = new Date().toLocaleString("en-US", options);
   console.log("22222");
 
-  const client = new MongoClient.connect(databaseUrl);
+  const client = await MongoClient.connect(databaseUrl);
   console.log("database url =>" + databaseUrl);
 
   // await client.connect();
